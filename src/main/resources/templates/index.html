@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Top page</title>
+<style type="text/css">
+ h1 {font-size:18pt; font-weight: bold; color:red}
+ body {font-size:13pt; color:blue; margin: 5px 25px}
+</style>
+<script th:inline="javascript">
+	function action(){
+		var val=document.getElementById('text1').value;
+		var res = parserInt( val * ( 100 ));
+		document.getElementById('msg').innerHTML = val;
+	}
+
+</script>
+</head>
+<body>
+	<h1 th:text="#{content.title}"> Hello Page </h1>
+	<p id="msg"> </p>
+	<input type="text" id="text1" />
+	<button onclick="action()"> click </button>
+</body>
+</html>
